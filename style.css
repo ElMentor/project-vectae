@@ -1,0 +1,230 @@
+body{	
+	background:#fff url(images/bg.png) 0 0 repeat-y fixed;
+}
+
+
+#cadre{
+	width:800px;
+	margin:auto;
+	
+	
+}
+
+#righter {
+	width:330px;
+	position: absolute;
+  	right: 0;
+  	bottom: 0;
+  	height:100%;	
+  	z-index:100;
+}
+
+#righter .inner{
+	width:280px;
+	background : #fafafa;
+	position: absolute;
+	right: 0;
+  	top: 0;
+  	height:100%;
+ 	-moz-box-shadow: 0px 0px 4px grey;
+	-webkit-box-shadow: 0px 0px 4px grey;
+	box-shadow: 0px 0px 4px grey;
+	
+	padding:10px;	
+	
+	
+}
+
+#righter .bouton {
+	width:30px;
+	background-image:url('images/righterbgbutton.png');
+	position: absolute;
+	right:300px;
+  	bottom: 50%;
+  	height:130px;
+  	-moz-border-radius: 9px 0px 0px 9px;
+	-webkit-border-radius: 9px 0px 0px 9px;
+    border-radius:  9px 0px 0px 9px;
+    
+    cursor:pointer;
+
+}
+
+#logo {
+	width:600px;
+	height:147px;
+	background-image:url('images/logo.png');
+	margin:auto;	
+	margin-bottom:30px;
+
+}
+
+
+.login 
+{
+
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: white;
+    font-size: 13px;
+    width:250px;
+    height:25px;
+    font-family:"Lucida Sans","Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", sans-serif;
+    color:grey;
+    margin-bottom:3px;
+    
+}
+
+.password 
+{
+	
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: white;
+    font-size: 13px;
+    width:147px;
+    height:25px;
+    font-family: "Arial", sans-serif;
+    color:grey;
+    margin-bottom:10px;
+    
+}
+
+.buttonok
+{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    border: 1px solid #0080d1;
+    background: url('images/buttonbg.png');
+    background-repeat:repeat-x;
+    font-size: 13px;
+    width:100px;
+    height:29px;
+    font-family:"Lucida Sans""Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", sans-serif;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+
+.conteneurInput
+{
+	-moz-border-radius: 3px 3px 3px 3px; 
+    -webkit-border-radius: 3px 3px 3px 3px; 
+    border-radius: 3px 3px 3px 3px;
+	-moz-box-shadow: 0px 0px 4px grey;
+	-webkit-box-shadow: 0px 0px 4px grey;
+	box-shadow: 0px 0px 4px grey;
+	width:275px;
+	background : #F7F7F7;
+	background-repeat:repeat-y;
+	font-family:"Lucida Sans","Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", sans-serif;
+	font-size:10px;
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:20px;
+	margin:auto;
+	margin-top:20px;
+	color:#3d3d3d;
+	
+}
+
+.conteneurInput ul
+{
+	text-align:left;	
+}
+
+
+
+
+
+
+#aboutbox
+{
+	width:790px;
+	background:#fff;
+	background-repeat:repeat-y;
+	font-family:"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", sans-serif;
+	font-size:13px;
+	padding:5px;
+	margin:auto;
+	margin-top:30px;
+	color:#3d3d3d;
+	-moz-box-shadow: 0px 0px 4px #dedede;
+	-webkit-box-shadow: 0px 0px 4px #dedede;
+	box-shadow: 0px 0px 4px #dedede;
+}
+
+h1
+{
+	font-family: 'Lobster', cursive;
+	font-size:25px;
+	color:#3d3d3d;
+}
+
+
+#boxcontainer {
+	
+ width:800px;
+ height:300px;	
+ margin-top:10px;
+ 	padding:5px;
+}
+
+
+
+
+.box1
+{
+	width:260px;
+	height:147px;
+	background:url('images/capt1.png');
+	float:left;
+
+}
+
+.box2
+{
+	width:260px;
+	height:147px;
+	background:url('images/capt2.png');
+	float:left;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.box3
+{
+	width:260px;
+	height:147px;
+	background:url('images/capt3.png');
+	float:left;
+
+	
+}
+
+
+
+
+#disclaimer {
+	width:800px;
+	height:20px;
+	font-family:"Lucida Sans","Lucida Grande", "Lucida Sans Unicode", "Luxi Sans", sans-serif;
+	font-size:12px;
+	text-align:center;
+	color:#3D3D3D;
+	margin:auto;
+	margin-top: 20px;
+	margin-bottom:0px;
+	
+}
+
+
+
+
