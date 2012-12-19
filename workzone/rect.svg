@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onmousedown="base_rectangle(evt)" >
+<script><![CDATA[
+    i=0;
+
+      
+function base_rectangle(evt){
+    
+    x_down = event.clientX;
+    y_down = event.clientY;
+    
+    i++;
+    svgdoc=evt.target.ownerDocument; 
+    svgdoc.addEventListener("mousemove", crea_rectangle, false);           
+}
+    
+  
+      
+function crea_rectangle(evt){
+    
+    x_move = event.clientX;
+    y_move = event.clientY; 
+    
+    wid = x_move - x_down;
+    hei = y_move - y_down;     
+    
+    
+    nodeG=svgdoc.createElementNS("http://www.w3.org/2000/svg" , "g");
+    nodeG.setAttributeNS(null , "id" , "grpRect"+i);
+    
+    ou=evt.target;
+    ou.appendChild(nodeG);
+    
+    node=svgdoc.createElementNS("http://www.w3.org/2000/svg" ,"rect");
+    if((wid > 0)&&(hei > 0)){
+        node.setAttributeNS(null ,"x",x_down);
+        node.setAttributeNS(null ,"y",y_down);
+    }
+    else if((wid < 0)&&(hei <0)){  
+        node.setAttributeNS(null ,"x",x_move);
+        node.setAttributeNS(null ,"y",y_move);
+    }
+    else if((wid < 0)&&(hei > 0)){
+        node.setAttributeNS(null ,"x",x_move);
+        node.setAttributeNS(null ,"y",y_down);
+    }
+    else if((wid > 0)&&(hei < 0)){
+        node.setAttributeNS(null ,"x",x_down);
+        node.setAttributeNS(null ,"y",y_move);
+    };    
+    node.setAttributeNS(null ,"fill","red");    
+    node.setAttributeNS(null ,"width",Math.abs(wid));
+    node.setAttributeNS(null ,"height",Math.abs(hei));
+    
+    
+    if (svgdoc.getElementById("grpRect"+i)){
+        old = ou.getElementById("grpRect"+i);
+        ou.replaceChild(nodeG, old);
+    
+        ou = svgdoc.getElementById("grpRect"+i);
+        ou.appendChild(node);        
+    };  
+    
+    svgdoc.addEventListener("mouseup", finDessin, false);  
+}
+
+  
+      
+function finDessin(evt){     
+    svgdoc.removeEventListener("mousemove", crea_rectangle, false);
+    svgdoc.removeEventListener("mouseup", finDessin, false);
+}
+    
+        
+        
+]]></script>
+</svg>

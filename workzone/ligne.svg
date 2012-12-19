@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onmousedown="base_ligne(evt)" >
+<script><![CDATA[
+    i=0;
+
+      
+function base_ligne(evt){
+    
+    x_down = event.clientX;
+    y_down = event.clientY;
+    
+    i++;
+    svgdoc=evt.target.ownerDocument;  
+    svgdoc.addEventListener("mousemove", crea_ligne, false);           
+}
+    
+  
+      
+function crea_ligne(evt){
+    
+    x_move = event.clientX;
+    y_move = event.clientY; 
+    
+    
+    nodeG=svgdoc.createElementNS("http://www.w3.org/2000/svg" , "g");
+    nodeG.setAttributeNS(null , "id" , "grpLine"+i);
+    
+    ou=evt.target;
+    ou.appendChild(nodeG);
+    
+    node=svgdoc.createElementNS("http://www.w3.org/2000/svg" ,"line");
+    node.setAttributeNS(null ,"x1",x_down);
+    node.setAttributeNS(null ,"y1",y_down);
+    node.setAttributeNS(null ,"x2",x_move);
+    node.setAttributeNS(null ,"y2",y_move);
+    node.setAttributeNS(null ,"stroke","red");    
+    
+    if (svgdoc.getElementById("grpLine"+i)){
+        old = ou.getElementById("grpLine"+i);
+        ou.replaceChild(nodeG, old);
+    
+        ou = svgdoc.getElementById("grpLine"+i);
+        ou.appendChild(node);        
+    }
+    else{
+        ou.appendChild(nodeG);
+    };
+    
+    svgdoc.addEventListener("mouseup", finDessin, false);         
+}
+
+  
+      
+function finDessin(evt){   
+    svgdoc.removeEventListener("mousemove", crea_ligne, false);
+    svgdoc.removeEventListener("mouseup", finDessin, false);
+}
+    
+        
+        
+]]></script>
+</svg>

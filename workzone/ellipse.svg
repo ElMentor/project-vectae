@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" onmousedown="centre_ellipse(evt)" >
+<script><![CDATA[
+    i=0;
+
+      
+function centre_ellipse(evt){
+    
+    x_down = event.clientX;
+    y_down = event.clientY;
+    
+    i++;
+    svgdoc=evt.target.ownerDocument;  
+    svgdoc.addEventListener("mousemove", crea_ellipse, false);           
+}
+    
+  
+      
+function crea_ellipse(evt){
+    
+    x_move = event.clientX;
+    y_move = event.clientY;     
+    
+    rx = x_move - x_down;  
+    ry = y_move - y_down;
+       
+    
+    nodeG=svgdoc.createElementNS("http://www.w3.org/2000/svg" , "g");
+    nodeG.setAttributeNS(null , "id" , "grpEllipse"+i);
+    
+    ou=evt.target;
+    ou.appendChild(nodeG);
+    
+    node=svgdoc.createElementNS("http://www.w3.org/2000/svg" ,"ellipse");
+    node.setAttributeNS(null ,"cx",x_down);
+    node.setAttributeNS(null ,"cy",y_down);
+    node.setAttributeNS(null ,"fill","red");    
+    node.setAttributeNS(null ,"rx",Math.abs(rx));
+    node.setAttributeNS(null ,"ry",Math.abs(ry));
+    
+    
+    if (svgdoc.getElementById("grpEllipse"+i)){
+        old = ou.getElementById("grpEllipse"+i);
+        ou.replaceChild(nodeG, old);
+    
+        ou = svgdoc.getElementById("grpEllipse"+i);
+        ou.appendChild(node);        
+    }; 
+    
+    svgdoc.addEventListener("mouseup", finDessin, false);     
+}
+
+  
+      
+function finDessin(evt){     
+    svgdoc.removeEventListener("mousemove", crea_ellipse, false);
+    svgdoc.removeEventListener("mouseup", finDessin, false);
+}
+    
+        
+        
+]]></script>
+</svg>
